@@ -41,6 +41,19 @@
             text-align: left;
             display: inline-block;
         }
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #cc5500;
+        }
     </style>
 </head>
 <body>
@@ -73,9 +86,24 @@
             <li>Give them love, attention, and proper training.</li>
             <li>Keep their environment clean and safe.</li>
         </ul>
+        <button onclick="showMessage()">Click for a Dog Fact</button>
+        <p id="fact" style="font-weight: bold; margin-top: 10px;"></p>
     </section>
     <footer>
         <p>&copy; 2025 Dog Lovers. All Rights Reserved.</p>
     </footer>
+    <script>
+        function showMessage() {
+            const facts = [
+                "Dogs have three eyelids!",
+                "A dog's nose print is unique, just like a human fingerprint.",
+                "Some dogs can learn over 1,000 words.",
+                "Dogs can smell up to 100,000 times better than humans.",
+                "The Basenji dog doesn’t bark—it yodels!"
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").textContent = randomFact;
+        }
+    </script>
 </body>
 </html>
